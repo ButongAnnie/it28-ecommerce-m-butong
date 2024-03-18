@@ -21,12 +21,39 @@
             max-width: 100px;
             max-height: 100px;
         }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>BUKO STORE</h1>
     <table>
         <thead>
+            <nav>
+                <a href="#">Product Inventory</a>
+                <a href="#">Payment & Accounting</a>
+                <a href="#">Logistics</a>
+                <a href="#">Customer Services</a>
+                <a href="#">Reports</a>
+              </nav>
+              
             <tr>
                 <th>Product ID</th>
                 <th>Product Name</th>
