@@ -1,90 +1,157 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUKO STORE</title>
+    <title>Product Inventory</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .product-image {
-            max-width: 100px;
-            max-height: 100px;
-        }
-        nav {
+
+        
+        header {
             background-color: #333;
-            overflow: hidden;
+            color: #fff;
+            padding: 10px;
         }
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
             text-decoration: none;
         }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .content {
+
+        
+        main {
             padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+
+        
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+       
+        .product img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto; 
+            transition: transform 0.3s ease-in-out; 
+        }
+
+
+        .product img:hover {
+            transform: scale(1.1); 
+        }
+        
+        .buy-button, .add-to-cart-button {
+            padding: 5px 10px;
+            background-color: #bd0039;
+            color: rgb(255, 255, 255);
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .buy-button:hover, .add-to-cart-button:hover {
+            background-color: #0056b3;
+        }
+
+        
+        .product p {
+            margin-bottom: 10px; 
+        }
+
+       
+        .product p.bold-text {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>BUKO STORE</h1>
-    <table>
-        <thead>
-            <nav>
-                <a href="#">Product Inventory</a>
-                <a href="#">Payment & Accounting</a>
-                <a href="#">Logistics</a>
-                <a href="#">Customer Services</a>
-                <a href="#">Reports</a>
-              </nav>
-              
-            <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Stock Quantity</th>
-                <th> Image</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>BUKO JUICE</td>
-                <td>₱50.00</td>
-                <td>50</td>
-                <td> <img class= "image" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgD86lknDOF2XHEz7OXhljF2Ns5br-BBwIAmku2EnrPg&s" alt=".product-image" ></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>BUKO PIE</td>
-                <td>₱150.00</td>
-                <td>25</td>
-                <td> <img class= "image" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9t2EHUzKxpu74CdGkzCTBh46tV6U7yyvULAGU89hJ7w&s"alt=".product-image" ></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                    <td>UBE HALAYA BUKO PIE</td>
-                    <td>₱250.00</td>
-                    <td>25</td>
-                    <td> <img class= "image" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7M5PiOX6U2NnqD_ucu-DDWSItnkOu7LBne2ywYVzYvQ&s"alt=".product-image" ></td>
-            </tr>
-                </tbody>
-    </table>
+    
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Product Inventory</a></li>
+                <li><a href="payment.html">Payment & Accounting</a></li>
+                <li><a href="logistics.html">Logistics</a></li>
+                <li><a href="customer_service.html">Customer Service</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      <main>
+        <h1>BUKO STORE</h1>
+
+        <div class="product-grid">
+
+            <div class="product">
+                <h2>Product 1</h2>
+                <img src="https://amiablefoods.com/wp-content/uploads/buko-pie-recipe-card-1.jpg" alt="pie">
+                <p class="bold-text">Buko Pie</p>
+                <p>Product Code: IW001</p>
+                <p>Description: Buko pie is a traditional Filipino pastry invented in 1965. The filling is made with a mixture of fresh young coconut, coconut juice, and milks and thickened with cornstarch, then encased in a tender pie crust.</p>
+                <p>Price: ₱150.00</p>
+                <button class="buy-button" onclick="redirectToPayment('IW001')">Buy</button>
+                <button class="add-to-cart-button" onclick="redirectToPayment('IW001')">Add to Cart</button>
+            </div>
+
+            
+            <div class="product">
+                <h2>Product 2</h2>
+                <img src="data:image/jpeg;base64,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"  alt="BJ">
+                <p>Product Code: IW002</p>
+                <p>Description:  Coconut water from young green coconuts</p>
+                <p>Price: ₱50.00</p>
+                <button class="buy-button" onclick="redirectToPayment('IW002')">Buy</button>
+                <button class="add-to-cart-button" onclick="redirectToPayment('IW002')">Add to Cart</button>
+            </div>
+
+            
+
+        </div>
+    </main>
+
+    <script>
+        function redirectToPayment() {
+            window.location.href = "payment";
+        }
+    </script>
 </body>
 </html>
+
+
+
