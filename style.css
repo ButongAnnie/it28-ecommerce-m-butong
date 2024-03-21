@@ -1,0 +1,31 @@
+.buy-button {
+    margin-right: 10px; 
+}
+
+.add-to-cart-button {
+    margin-left: 10px; 
+}
+
+table {
+    width: 100%;
+}
+
+
+tr {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+td {
+    flex: 1 1 100%; 
+    padding: 8px;
+    border-bottom: 1px solid #0012b1;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
